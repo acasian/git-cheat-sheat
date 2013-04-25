@@ -1,0 +1,46 @@
+#change global GIT variables
+	git config --global 
+#git config aliases
+	git config --global alias.co checkout
+	git config --global alias.ci commit
+	git config --global alias.st status
+	git config --global alias.br branch
+	git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+	git config --global alias.type 'cat-file -t'
+	git config --global alias.dump 'cat-file -p'
+#create a repository in the selected folder
+	git init 
+#add changes to commit
+	git add $file 
+#commit the changes to repo
+	git commit -m "comment"
+#check the status of a repository
+	git status
+#list all the changes from history
+	git log --pretty=oneline
+#other log arguments
+	git log --pretty=oneline --max-count=2
+	git log --pretty=oneline --since='5 minutes ago'
+	git log --pretty=oneline --until='5 minutes ago'
+	git log --pretty=oneline --author=<your name>
+	git log --pretty=oneline --all
+	git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+#reset the buffer zone
+	git reset HEAD ${file}
+#undo commits
+	git revert HEAD/${hash} --no-edit
+#creating a branch
+	git branch ${branch_name}
+	git checkout ${branch_name}
+#merge between branches
+	git merge ${branch_name}
+#clone a repository
+	git clone ${repository_name} ${cloned_reporsitory_name}
+#remote repository
+	git remote
+	git remote show origin
+#fecthing data between repositories
+	git fetch
+	git merge origin/master
+#fetch + merge = pull
+	
